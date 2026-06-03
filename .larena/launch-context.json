@@ -1,0 +1,51 @@
+{
+  "schema": "larena.package_launch_context.v1",
+  "package": "larena/secret",
+  "launch_record_ref": "specs/implementation-planning/launch-records/secret-repository-enforcement-baseline.json",
+  "specs_repo": "simai/larena-specs",
+  "specs_commit": "7c580ae",
+  "selected_features": [
+    "secret.secret_reference_broker",
+    "secret.secret_lease_redaction",
+    "secret.vault_adapter_contract"
+  ],
+  "allowed_files": [
+    ".gitignore",
+    ".env.example",
+    "README.md",
+    "composer.json",
+    "module.yaml",
+    "phpstan.neon.dist",
+    ".github/workflows/larena-package-ci.yml",
+    ".githooks/pre-commit",
+    ".githooks/pre-push",
+    ".larena/spec-ref.json",
+    ".larena/launch-context.json",
+    "docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/README.md",
+    "docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/file-map.json",
+    "docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/deviations.json",
+    "docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/graph-sync-proposal.json",
+    "docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/independent-review.md"
+  ],
+  "forbidden_files": [
+    "src/*",
+    "config/*",
+    "database/*",
+    "routes/*",
+    "resources/*",
+    "tests/*"
+  ],
+  "forbidden_behavior": [
+    "runtime_implementation",
+    "production_logic",
+    "direct_larena_specs_update_by_package_agent"
+  ],
+  "evidence_path": "docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/",
+  "graph_sync_proposal_path": "docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/graph-sync-proposal.json",
+  "status": "repository_enforcement_baseline_pending_review",
+  "repository_enforcement_installed": true,
+  "coding_started": false,
+  "review_completed": true,
+  "review_status": "passed_for_enforcement_baseline",
+  "next_transition": "fast_forward_merge_enforcement_to_main_then_prepare_contract_implementation_launch"
+}

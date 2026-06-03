@@ -1,0 +1,16 @@
+name: secret
+package: larena/secret
+status: enforcement-baseline
+edition: core
+product_layer: runtime-security
+license: Apache-2.0
+title: Larena Secret
+description: Secret broker for SecretReference, vault adapters, scoped leases, redaction, rotation and audited runtime access.
+canonical_specs:
+  repository: simai/larena-specs
+  commit: 7c580ae
+  package_spec: specs/packages/secret/package.json
+  features: specs/packages/secret/features.json
+implementation:
+  runtime_code_started: false
+  launch_record_required: true
