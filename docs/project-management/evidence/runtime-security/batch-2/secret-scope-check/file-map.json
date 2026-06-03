@@ -1,0 +1,16 @@
+{
+  "schema": "larena.package_file_map.v1",
+  "package": "larena/secret",
+  "batch": "runtime-security/batch-2/secret-scope-check",
+  "changed_files": [
+    "composer.json",
+    ".larena/launch-context.json",
+    "tools/larena-scope-check.php",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/README.md",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/commands.md",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/file-map.json",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/deviations.json",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/graph-sync-proposal.json"
+  ],
+  "runtime_files_changed": []
+}
