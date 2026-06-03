@@ -12,13 +12,28 @@
   "require": {
     "php": "^8.3"
   },
-  "scripts": {
-    "test": "@php -r \"echo 'No runtime tests in enforcement baseline.'.PHP_EOL;\"",
-    "test:unit": "@test",
-    "lint": "@php -r \"echo 'No lint targets in enforcement baseline.'.PHP_EOL;\"",
-    "analyse": "@php -r \"echo 'No static analysis targets in enforcement baseline.'.PHP_EOL;\"",
-    "validate:larena": "test -f .larena/spec-ref.json && test -f .larena/launch-context.json",
-    "evidence:check": "test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/README.md && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/file-map.json && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/graph-sync-proposal.json && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/independent-review.md"
+  "autoload": {
+    "psr-4": {
+      "Larena\\Secret\\": "src/"
+    }
   },
-  "minimum-stability": "stable"
+  "autoload-dev": {
+    "psr-4": {
+      "Larena\\Secret\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "php tests/Unit/SecretReferenceContractTest.php && php tests/Unit/SecretLeaseRedactionTest.php",
+    "test:unit": "@test",
+    "lint": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l",
+    "analyse": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l",
+    "validate:larena": "@php -r 'foreach ([\"module.yaml\", \"src/Contracts/SecretReference.php\", \"src/Contracts/SecretLease.php\", \"src/Contracts/SecretBroker.php\", \"src/Contracts/VaultAdapter.php\", \"src/Enums/SecretLeaseStatus.php\", \"src/Enums/SecretRedactionLevel.php\"] as $file) { if (!is_file($file)) { fwrite(STDERR, \"Missing {$file}\\n\"); exit(1); } } echo \"Larena secret contract skeleton is valid.\\n\";'",
+    "evidence:check": "test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/README.md && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/file-map.json && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/graph-sync-proposal.json && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/independent-review.md && test -f docs/project-management/evidence/runtime-security/batch-1/secret/implementation-summary.md && test -f docs/project-management/evidence/runtime-security/batch-1/secret/tests.md && test -f docs/project-management/evidence/runtime-security/batch-1/secret/smoke.md && test -f docs/project-management/evidence/runtime-security/batch-1/secret/file-map.json && test -f docs/project-management/evidence/runtime-security/batch-1/secret/deviations.json && test -f docs/project-management/evidence/runtime-security/batch-1/secret/graph-sync-proposal.json && test -f docs/project-management/evidence/runtime-security/batch-1/secret/code-review-feedback.md"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {}
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
