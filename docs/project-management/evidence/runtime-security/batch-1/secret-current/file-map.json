@@ -1,0 +1,30 @@
+{
+  "schema": "larena.package_batch_file_map.v1",
+  "package": "larena/secret",
+  "launch_record_ref": "specs/implementation-planning/launch-records/secret-batch-1-contract-skeletons-current.json",
+  "allowed_changed_files": [
+    ".larena/launch-context.json",
+    "phpstan.neon.dist",
+    "scripts/lint.php",
+    "scripts/test-placeholder.php",
+    "scripts/validate-larena-package.php",
+    "src/Contracts/SecretBroker.php",
+    "src/Contracts/SecretLease.php",
+    "src/Contracts/SecretReference.php",
+    "src/Contracts/VaultAdapter.php",
+    "src/Enums/SecretLeaseStatus.php",
+    "src/Enums/SecretRedactionLevel.php",
+    "tests/Unit/SecretLeaseRedactionTest.php",
+    "tests/Unit/SecretReferenceContractTest.php"
+  ],
+  "evidence_files": [
+    "docs/project-management/evidence/runtime-security/batch-1/secret-current/README.md",
+    "docs/project-management/evidence/runtime-security/batch-1/secret-current/implementation-summary.md",
+    "docs/project-management/evidence/runtime-security/batch-1/secret-current/tests.md",
+    "docs/project-management/evidence/runtime-security/batch-1/secret-current/smoke.md",
+    "docs/project-management/evidence/runtime-security/batch-1/secret-current/file-map.json",
+    "docs/project-management/evidence/runtime-security/batch-1/secret-current/deviations.json",
+    "docs/project-management/evidence/runtime-security/batch-1/secret-current/graph-sync-proposal.json",
+    "docs/project-management/evidence/runtime-security/batch-1/secret-current/code-review-feedback.md"
+  ]
+}

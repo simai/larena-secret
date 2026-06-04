@@ -39,9 +39,7 @@ if (($launchContext['package'] ?? null) !== 'larena/secret') {
     $errors[] = '.larena/launch-context.json package must be larena/secret';
 }
 
-if (($launchContext['coding_started'] ?? null) !== false) {
-    $errors[] = 'coding_started must be false before a coding launch record.';
-}
+$contractCodingStarted = ($launchContext['coding_started'] ?? false) === true;
 
 if (!str_starts_with((string) ($launchContext['evidence_path'] ?? ''), 'docs/project-management/evidence/')) {
     $errors[] = 'launch-context evidence_path must start with docs/project-management/evidence/';
@@ -52,9 +50,32 @@ if (!str_starts_with((string) ($launchContext['graph_sync_proposal_path'] ?? '')
 }
 
 foreach (['src', 'config', 'database', 'routes', 'resources', 'tests', 'lang'] as $runtimePath) {
-    if (is_dir($runtimePath)) {
+    if (!$contractCodingStarted && is_dir($runtimePath)) {
         $errors[] = "{$runtimePath}/ is not allowed in this clean pre-codegen baseline commit.";
     }
+}
+if ($contractCodingStarted) {
+    foreach ([
+        'src/Contracts/SecretBroker.php',
+        'src/Contracts/SecretLease.php',
+        'src/Contracts/SecretReference.php',
+        'src/Contracts/VaultAdapter.php',
+        'src/Enums/SecretLeaseStatus.php',
+        'src/Enums/SecretRedactionLevel.php',
+        'tests/Unit/SecretLeaseRedactionTest.php',
+        'tests/Unit/SecretReferenceContractTest.php',
+    ] as $contractFile) {
+        if (!is_file($contractFile)) {
+            $errors[] = "Missing contract skeleton file {$contractFile}.";
+        }
+    }
+}
+if (!in_array(($launchContext['status'] ?? null), [
+    'repository_prepared_pending_review',
+    'coding_started',
+    'contract_skeleton_review_passed',
+], true)) {
+    $errors[] = 'launch-context status is not allowed for this repository state.';
 }
 
 if ($errors !== []) {
@@ -64,4 +85,4 @@ if ($errors !== []) {
     exit(1);
 }
 
-echo "Larena Secret clean pre-codegen baseline is valid.\n";
+echo "Larena Secret coding launch context is valid.\n";
