@@ -1,9 +1,7 @@
 # Larena Secret
 
-Package: `larena/secret`
+Secret broker for SecretReference, vault adapters, scoped leases, redaction, rotation and audited runtime access.
 
-Status: repository enforcement baseline. Runtime implementation has not started.
+This repository is currently a clean Larena pre-codegen baseline. Package implementation code has not started.
 
-Canonical specs: `simai/larena-specs` at `7c580ae`.
-
-This repository is an implementation and evidence space. It must not redefine package scope outside Larena Specs.
+Canonical specifications are in `simai/larena-specs`.

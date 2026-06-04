@@ -1,6 +1,6 @@
 {
   "name": "larena/secret",
-  "description": "Secret broker for SecretReference, vault adapters, scoped leases, redaction, rotation and audited runtime access.",
+  "description": "Larena Secret: Secret broker for SecretReference, vault adapters, scoped leases, redaction, rotation and audited runtime access.",
   "type": "library",
   "license": "Apache-2.0",
   "authors": [
@@ -22,13 +22,16 @@
       "Larena\\Secret\\Tests\\": "tests/"
     }
   },
+  "require-dev": {
+    "phpstan/phpstan": "^2.0"
+  },
   "scripts": {
-    "test": "php tests/Unit/SecretReferenceContractTest.php && php tests/Unit/SecretLeaseRedactionTest.php",
-    "test:unit": "@test",
-    "lint": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l",
-    "analyse": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l",
-    "validate:larena": "@php -r 'foreach ([\"module.yaml\", \"src/Contracts/SecretReference.php\", \"src/Contracts/SecretLease.php\", \"src/Contracts/SecretBroker.php\", \"src/Contracts/VaultAdapter.php\", \"src/Enums/SecretLeaseStatus.php\", \"src/Enums/SecretRedactionLevel.php\"] as $file) { if (!is_file($file)) { fwrite(STDERR, \"Missing {$file}\\n\"); exit(1); } } echo \"Larena secret contract skeleton is valid.\\n\";'",
-    "evidence:check": "test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/README.md && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/file-map.json && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/graph-sync-proposal.json && test -f docs/project-management/evidence/runtime-security/batch-0/secret-repository-transition/independent-review.md && test -f docs/project-management/evidence/runtime-security/batch-1/secret/implementation-summary.md && test -f docs/project-management/evidence/runtime-security/batch-1/secret/tests.md && test -f docs/project-management/evidence/runtime-security/batch-1/secret/smoke.md && test -f docs/project-management/evidence/runtime-security/batch-1/secret/file-map.json && test -f docs/project-management/evidence/runtime-security/batch-1/secret/deviations.json && test -f docs/project-management/evidence/runtime-security/batch-1/secret/graph-sync-proposal.json && test -f docs/project-management/evidence/runtime-security/batch-1/secret/code-review-feedback.md && test -f docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/README.md && test -f docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/commands.md && test -f docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/file-map.json && test -f docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/deviations.json && test -f docs/project-management/evidence/runtime-security/batch-2/secret-scope-check/graph-sync-proposal.json",
+    "test": "php scripts/test-placeholder.php",
+    "test:unit": "php scripts/test-placeholder.php",
+    "lint": "php scripts/lint.php",
+    "analyse": "php scripts/analyse.php",
+    "validate:larena": "php scripts/validate-larena-package.php",
+    "evidence:check": "php scripts/check-evidence.php",
     "scope:check": "php tools/larena-scope-check.php",
     "quality:gate": [
       "@validate:larena",
