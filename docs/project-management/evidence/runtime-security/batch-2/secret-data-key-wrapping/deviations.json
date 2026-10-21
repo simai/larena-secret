@@ -1,0 +1,11 @@
+{
+  "schema": "larena.package_batch_deviations.v1",
+  "package": "larena/secret",
+  "deviations": [
+    {
+      "id": "no-service-provider",
+      "summary": "The package has no provider pattern, so no Laravel glue was added; storage binds DataKeyWrapper lazily from config('app.key') and config('app.previous_keys') as documented in README.",
+      "impact": "none for this slice"
+    }
+  ]
+}

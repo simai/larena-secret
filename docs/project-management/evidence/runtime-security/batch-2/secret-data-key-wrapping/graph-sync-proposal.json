@@ -1,0 +1,15 @@
+{
+  "schema": "larena.graph_sync_proposal.v1",
+  "package": "larena/secret",
+  "launch_record_ref": "docs/architecture/2026-10-22-storage-field-encryption.md",
+  "status": "proposal_pending_specs_review",
+  "canonical_update_allowed": false,
+  "must_not_apply_automatically": true,
+  "findings": [
+    {
+      "feature": "secret.vault_adapter_contract",
+      "kind": "open_decision_resolved",
+      "summary": "Local encrypted adapter key policy: KEK derived from APP_KEY by HKDF-SHA256 with the purpose label larena/secret/kek:v1; data keys wrapped with XChaCha20-Poly1305 (DataKeyWrapper, AppKeyDerivedDataKeyWrapper)."
+    }
+  ]
+}

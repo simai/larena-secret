@@ -1,0 +1,28 @@
+{
+  "schema": "larena.package_batch_file_map.v1",
+  "package": "larena/secret",
+  "launch_record_ref": "docs/architecture/2026-10-22-storage-field-encryption.md",
+  "allowed_changed_files": [
+    ".larena/launch-context.json",
+    "CHANGELOG.md",
+    "README.md",
+    "composer.json",
+    "composer.lock",
+    "scripts/test-placeholder.php",
+    "src/Contracts/DataKeyWrapper.php",
+    "src/Exceptions/DataKeyUnavailable.php",
+    "src/Local/AppKeyDerivedDataKeyWrapper.php",
+    "src/ValueObjects/WrappedDataKey.php",
+    "tests/Unit/AppKeyDerivedDataKeyWrapperTest.php",
+    "tests/Unit/WrappedDataKeyTest.php"
+  ],
+  "evidence_files": [
+    "docs/project-management/evidence/runtime-security/batch-2/secret-data-key-wrapping/README.md",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-data-key-wrapping/implementation-summary.md",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-data-key-wrapping/tests.md",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-data-key-wrapping/smoke.md",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-data-key-wrapping/file-map.json",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-data-key-wrapping/deviations.json",
+    "docs/project-management/evidence/runtime-security/batch-2/secret-data-key-wrapping/graph-sync-proposal.json"
+  ]
+}
