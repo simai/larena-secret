@@ -32,7 +32,12 @@
     "tests/Unit/AppKeyDerivedDataKeyWrapperTest.php",
     "tests/Unit/SecretLeaseRedactionTest.php",
     "tests/Unit/SecretReferenceContractTest.php",
-    "tests/Unit/WrappedDataKeyTest.php"
+    "tests/Unit/WrappedDataKeyTest.php",
+    "LICENSE",
+    "NOTICE",
+    "AUTHORS",
+    "CITATION.cff",
+    "REUSE.toml"
   ],
   "forbidden_files": [
     "config/*",

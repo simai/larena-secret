@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you refer to Larena Secret, please cite it as below."
+title: "Larena Secret"
+abstract: "Larena Secret: Secret broker for SecretReference, vault adapters, scoped leases, redaction, rotation and audited runtime access."
+type: software
+authors:
+  - family-names: "Zabarov"
+    given-names: "Rim"
+    email: "rim@zabarov.com"
+license: Apache-2.0
+repository-code: "https://github.com/simai/larena-secret"
