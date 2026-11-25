@@ -37,7 +37,10 @@
     "NOTICE",
     "AUTHORS",
     "CITATION.cff",
-    "REUSE.toml"
+    "REUSE.toml",
+    "module.yaml",
+    "scripts/check-delivery-manifest.php",
+    "scripts/analyse.php"
   ],
   "forbidden_files": [
     "config/*",

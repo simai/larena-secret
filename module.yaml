@@ -12,3 +12,15 @@ runtime:
   laravel: "^13.0"
 evidence:
   path: docs/project-management/evidence/runtime-security/batch-0/secret-clean-baseline/
+delivery:
+  publisher: simai
+  distribution: open
+  license: Apache-2.0
+  requires:
+    larena: dev-main
+    packages: {}
+  capabilities:
+    - larena.capability.secret.base
+  requires_capabilities: []
+  data_on_removal: none
+  migrations_reversible: true
